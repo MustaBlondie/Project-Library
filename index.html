@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Library</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="title-h1">
+        <h1>My Library</h1>
+      </div>
+      <div class="form">
+        <div class="title-book-form">
+          <label for="title-book"
+            >title<span aria-hidden="true">*</span>:</label
+          >
+          <input
+            type="text"
+            id="title-book"
+            name="title-book"
+            required
+            aria-required="true"
+          />
+        </div>
+        <div class="author-book-form">
+          <label for="author-book"
+            >author<span aria-hidden="true">*</span>:</label
+          >
+          <input
+            type="text"
+            id="author-book"
+            name="author-book"
+            required
+            aria-required="true"
+          />
+        </div>
+        <div class="pages-book-form">
+          <label for="pages-book"
+            >pages<span aria-hidden="true">*</span>:</label
+          >
+          <input
+            type="text"
+            id="pages-book"
+            name="pages-book"
+            required
+            aria-required="true"
+          />
+        </div>
+        <div class="read-book-form">
+          <label for="read-book">read<span aria-hidden="true">*</span>:</label>
+          <input
+            type="text"
+            id="read-book"
+            name="read-book"
+            required
+            aria-required="true"
+          />
+        </div>
+        <div class="book-submit-form">
+          <button>submit</button>
+        </div>
+      </div>
+      <div id="book-cards"></div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
