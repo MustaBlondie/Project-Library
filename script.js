@@ -12,6 +12,7 @@ function uniqueId() {
   if (typeof crypto !== "undefined" && crypto.randomUUID()) {
     return crypto.randomUUID();
   } else {
+    //This is new for me, I just investagate it
     return "id-" + Math.random().toString(36).substr(2, 9);
   }
 }
@@ -22,19 +23,22 @@ function addBookToLibrary(title, author, pages, read) {
   return newBook;
 }
 
-const bookOne = new addBookToLibrary(
-  "The Hobbit",
-  "J.R.R",
-  295,
-  "not read yet"
-);
+document.getElementById("form-book").addEventListener("submit", function (e) {
+  e.preventDefault();
+  const titleBook = document.getElementById("title-book").value;
+  const authorBook = document.getElementById("author-book").value;
+  const pagesBook = document.getElementById("pages-book").value;
+  const readBook = document.getElementById("read-book").value;
 
-const bookTwo = new addBookToLibrary(
-  "12 cuentos peregrinos",
-  "el marquez",
-  "129",
-  "super releido"
-);
+  if (!titleBook || !authorBook || !pagesBook || !readBook) {
+    alert("Please complete all fields");
+    return;
+  }
+
+  addBookToLibrary(titleBook, authorBook, pagesBook, readBook);
+  showTheBooks();
+  this.reset();
+});
 
 function showTheBooks() {
   const bookCards = document.getElementById("book-cards");
