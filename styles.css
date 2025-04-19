@@ -29,3 +29,118 @@ h5,
 h6 {
   text-wrap: balance;
 }
+
+.container {
+  width: 90%;
+  max-width: 1500px;
+  background-color: #faf1e6;
+  margin: 0 auto;
+  padding: 20px 50px;
+
+  /* Grid */
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 100px 250px 1fr;
+  gap: 20px;
+  place-items: center;
+}
+
+.title-h1 {
+  font-family: "Limelight", sans-serif;
+}
+
+.form {
+  background-color: #b4ebe6;
+  padding: 20px;
+  font-family: "Playfair Display", serif;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 5px;
+
+  /* grid-father*/
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(3, 0.5fr);
+  gap: 20px;
+}
+.input-container {
+  padding: 5px;
+  display: grid;
+  grid-template-columns: 0.5fr 3fr;
+  gap: 5px;
+
+  justify-items: center;
+  align-items: center;
+}
+.label-form {
+  font-size: 25px;
+  text-transform: capitalize;
+}
+.input {
+  height: 30px;
+  width: 100%;
+  border: none;
+  border-radius: 3px;
+  padding: 5px;
+  font-size: 20px;
+  font-family: "Lora", serif;
+}
+.label-form > span {
+  color: red;
+}
+.button-submit {
+  grid-column: 1/3;
+  grid-row: 3/4;
+  justify-self: center;
+  align-self: center;
+}
+.button-submit > button {
+  font-size: 20px;
+  font-family: "Limelight", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #0c0950;
+  background-color: #ffff;
+  text-transform: capitalize;
+  border: none;
+  padding: 10px 15px;
+  margin-top: 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.button-submit > button:hover {
+  color: #3d0301;
+}
+
+#book-cards {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: auto;
+  gap: 16px;
+}
+.card {
+  padding: 15px;
+  font-family: "Lora", serif;
+  color: #cf0f47;
+  background-color: #fef9d9;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+.card::first-letter {
+  text-transform: capitalize;
+}
+.card-author {
+  text-transform: capitalize;
+  font-size: 20px;
+  color: #000000;
+}
+.card-book-pages {
+  color: #1a5d1a;
+}
+.card-book-read {
+  text-transform: capitalize;
+  color: #f5004f;
+}
+.remove-book-card {
+  margin-left: 100px;
+}

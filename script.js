@@ -50,13 +50,26 @@ function showTheBooks() {
 
     card.innerHTML = `
         <h2 class="card-title">${element.title}</h2>
-        <p class="card-author">${element.author}</p>
-        <p class="card-book-pages">${element.pages}</p>
-        <p class="card-book-read">${element.read}</p>
+        <p class="card-author">by ${element.author}</p>
+        <p class="card-book-pages">${element.pages}<span> pages</span></p>
+        <p class="card-book-read">Read: ${element.read}</p>
+        <button class="remove-book-card" >remove</button>
     `;
 
     bookCards.appendChild(card);
   });
+
+  document.querySelectorAll(".remove-book-card").forEach((button) => {
+    button.addEventListener("click", function () {
+      const index = parseInt(this.dataset.index);
+      removeBookFromLibrary(index);
+      showTheBooks();
+    });
+  });
+
+  function removeBookFromLibrary(index) {
+    myLibrary.splice(index, 1);
+  }
 }
 
 showTheBooks();

@@ -3,6 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Limelight&family=Lora:ital,wght@0,400..700;1,400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
     <title>Project Library</title>
   </head>
   <body>
@@ -10,55 +17,61 @@
       <div class="title-h1">
         <h1>My Library</h1>
       </div>
-      <form class="form" id="form-book" type="">
-        <div class="title-book-form">
-          <label for="title-book"
-            >title<span aria-hidden="true">*</span>:</label
-          >
+      <form class="form" id="form-book" autocomplete="off">
+        <div class="title-book-form input-container">
+          <label for="title-book" class="label-form"
+            >title<span aria-hidden="true">*</span>:
+          </label>
           <input
             type="text"
             id="title-book"
+            class="input"
             name="title-book"
             required
             aria-required="true"
           />
         </div>
-        <div class="author-book-form">
-          <label for="author-book"
-            >author<span aria-hidden="true">*</span>:</label
-          >
+        <div class="author-book-form input-container">
+          <label for="author-book" class="label-form"
+            >author<span aria-hidden="true">*</span>:
+          </label>
           <input
             type="text"
             id="author-book"
             name="author-book"
+            class="input"
             required
             aria-required="true"
           />
         </div>
-        <div class="pages-book-form">
-          <label for="pages-book"
-            >pages<span aria-hidden="true">*</span>:</label
-          >
+        <div class="pages-book-form input-container">
+          <label for="pages-book" class="label-form"
+            >pages<span aria-hidden="true">*</span>:
+          </label>
           <input
-            type="text"
+            type="number"
             id="pages-book"
             name="pages-book"
+            class="input"
             required
             aria-required="true"
           />
         </div>
-        <div class="read-book-form">
-          <label for="read-book">read<span aria-hidden="true">*</span>:</label>
+        <div class="read-book-form input-container">
+          <label for="read-book" class="label-form"
+            >read<span aria-hidden="true">*</span>:
+          </label>
           <input
             type="text"
             id="read-book"
+            class="input"
             name="read-book"
             required
             aria-required="true"
           />
         </div>
-        <div>
-          <button id="book-submit-form" type="submit">submit</button>
+        <div class="button-submit">
+          <button id="book-submit-form" type="submit">add new book</button>
         </div>
       </form>
       <div id="book-cards"></div>
