@@ -58,14 +58,27 @@
           />
         </div>
         <div class="read-book-form input-container">
-          <label for="read-book" class="label-form"
+          <label class="label-form"
             >read<span aria-hidden="true">*</span>:
           </label>
+          <label for="read-book-yes">Yes </label>
           <input
-            type="text"
-            id="read-book"
+            type="radio"
+            id="read-book-yes"
             class="input"
             name="read-book"
+            value="yes"
+            required
+            aria-required="true"
+          />
+
+          <label for="read-book">No</label>
+          <input
+            type="radio"
+            id="read-book-no"
+            class="input"
+            name="read-book"
+            value="no"
             required
             aria-required="true"
           />

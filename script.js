@@ -28,7 +28,10 @@ document.getElementById("form-book").addEventListener("submit", function (e) {
   const titleBook = document.getElementById("title-book").value;
   const authorBook = document.getElementById("author-book").value;
   const pagesBook = document.getElementById("pages-book").value;
-  const readBook = document.getElementById("read-book").value;
+  const readBookRadio = document.querySelector(
+    'input[name="read-book"]:checked'
+  );
+  const readBook = readBookRadio ? readBookRadio.value : null;
 
   if (!titleBook || !authorBook || !pagesBook || !readBook) {
     alert("Please complete all fields");

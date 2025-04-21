@@ -71,6 +71,22 @@ h6 {
   justify-items: center;
   align-items: center;
 }
+.read-book-form {
+  font-size: 20px;
+  display: grid;
+  grid-template-columns: repeat(5, 0.4fr);
+}
+
+input[type="radio"] {
+  width: 20px;
+  height: 20px;
+  border: 2px solid grey;
+  background-color: transparent;
+}
+
+input[type="radio"]:checked {
+  accent-color: #cf0f47;
+}
 .label-form {
   font-size: 25px;
   text-transform: capitalize;
@@ -125,8 +141,12 @@ h6 {
   color: #cf0f47;
   background-color: #fef9d9;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: auto;
+  gap: 10px;
 }
-.card::first-letter {
+.card-title {
   text-transform: capitalize;
 }
 .card-author {
@@ -142,5 +162,16 @@ h6 {
   color: #f5004f;
 }
 .remove-book-card {
-  margin-left: 100px;
+  border: none;
+  padding: 10px 15px;
+  margin-top: 20px;
+  cursor: pointer;
+  background-color: #030303;
+  color: #fef9d9;
+  font-weight: bold;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+  justify-self: end;
 }
