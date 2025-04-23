@@ -8,11 +8,14 @@ function Book(title, author, pages, read) {
   this.id = uniqueId();
 }
 
+Book.prototype.toggleReadStatus = function () {
+  this.read = this.read === "yes" ? "no" : "yes";
+};
+
 function uniqueId() {
   if (typeof crypto !== "undefined" && crypto.randomUUID()) {
     return crypto.randomUUID();
   } else {
-    //This is new for me, I just investagate it
     return "id-" + Math.random().toString(36).substr(2, 9);
   }
 }
@@ -47,7 +50,7 @@ function showTheBooks() {
   const bookCards = document.getElementById("book-cards");
   bookCards.innerHTML = "";
 
-  myLibrary.forEach((element) => {
+  myLibrary.forEach((element, index) => {
     const card = document.createElement("div");
     card.className = "card";
 
@@ -55,24 +58,31 @@ function showTheBooks() {
         <h2 class="card-title">${element.title}</h2>
         <p class="card-author">by ${element.author}</p>
         <p class="card-book-pages">${element.pages}<span> pages</span></p>
-        <p class="card-book-read">Read: ${element.read}</p>
-        <button class="remove-book-card" >remove</button>
+        <p class="read-status">Read: ${
+          element.read === "yes" ? "Yes" : "No"
+        }</p>
+        <button class="toggle-read-btn" data-index="${index}">Toggle Read Status</button>
+        <button class="remove-book-card" data-index="${index}">remove</button>
     `;
 
     bookCards.appendChild(card);
   });
 
-  document.querySelectorAll(".remove-book-card").forEach((button) => {
+  document.querySelectorAll(".toggle-read-btn").forEach((button) => {
     button.addEventListener("click", function () {
       const index = parseInt(this.dataset.index);
-      removeBookFromLibrary(index);
+      myLibrary[index].toggleReadStatus();
       showTheBooks();
     });
   });
 
-  function removeBookFromLibrary(index) {
-    myLibrary.splice(index, 1);
-  }
+  document.querySelectorAll(".remove-book-card").forEach((button) => {
+    button.addEventListener("click", function () {
+      const index = parseInt(this.dataset.index);
+      myLibrary.splice(index, 1);
+      showTheBooks();
+    });
+  });
 }
 
 showTheBooks();

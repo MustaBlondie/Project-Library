@@ -58,9 +58,13 @@ h6 {
 
   /* grid-father*/
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(3, 0.5fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
+}
+@media screen and (max-width: 800px) {
+  .form {
+    grid-template-columns: 1fr;
+  }
 }
 .input-container {
   padding: 5px;
@@ -160,6 +164,23 @@ input[type="radio"]:checked {
 .card-book-read {
   text-transform: capitalize;
   color: #f5004f;
+}
+
+.toggle-read-btn {
+  border: none;
+  padding: 10px 15px;
+  margin-top: 20px;
+  cursor: pointer;
+  background-color: #ec7fa9;
+  color: #fef9d9;
+  font-weight: bold;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  justify-self: left;
+}
+.toggle-read-btn:hover {
+  background-color: #be5985;
 }
 .remove-book-card {
   border: none;
